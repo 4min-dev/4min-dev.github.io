@@ -60,12 +60,6 @@ async function fetchUserData() {
     }
 }
 
-if (window.Telegram && window.Telegram.WebApp) {
     fetchUserData()
-    alert('true')
-} else {
-    console.error('Telegram WebApp is not available')
-    alert('false')
-}
 
 export { fetchUserData }
