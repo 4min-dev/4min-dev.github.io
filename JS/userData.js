@@ -62,8 +62,6 @@ async function fetchUserData() {
         console.error(`Error: ${error}`)
     }
 }
-console.log('Telegram WebApp:', window.Telegram?.WebApp);
-alert(window.Telegram)
 
 // Проверяем, что Telegram WebApp доступен
 if (window.Telegram && window.Telegram.WebApp) {
