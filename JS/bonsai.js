@@ -2,6 +2,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const userStageExperience = document.querySelectorAll('.user__profile__stage__container')
     const bonsaiElement = document.querySelector('#bonsai__main')
 
+    const initData = window.Telegram.WebApp.initData;
+
+    async function test() {
+        const params = new URLSearchParams(initData)
+
+        const userField = params.get('user')
+
+        if (userField) {
+            try {
+                const userData = JSON.parse(userField)
+
+                const telegramUserId = userData.id
+
+                alert("Telegram User ID:", telegramUserId)
+            } catch (error) {
+                alert("Ошибка при парсинге данных пользователя:", error)
+            }
+        } else {
+            alert("Поле 'user' не найдено в initData")
+        }
+    }
+
+    test()
+
     const bonsaiData = [
         {
             id: 1,
@@ -59,6 +83,17 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) {
                 console.log(`HTTP err Status: ${response.status}`)
             }
+
+            // if(response.can_be_harvested) {
+            //     getBonsaiPopupContainer.classList.add('visible')
+            //     getBonsaiButton.addEventListener('click', trimBonsai)
+
+            //     const timeToTrim = convertSeconds(data.time_per_harvest)
+            //     if (timeToTrim) {
+            //         getBonsaiPopupContainer.querySelector('.get__bonsai__trim__timeout').textContent = timeToTrim
+            //     }
+            //     return
+            // }
 
             const data = await response.json()
             bonsaiStage = data.stage
