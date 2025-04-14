@@ -2,29 +2,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const userStageExperience = document.querySelectorAll('.user__profile__stage__container')
     const bonsaiElement = document.querySelector('#bonsai__main')
 
-    const initData = window.Telegram.WebApp.initData;
+    const initData = window.Telegram.WebApp.initData
 
-    async function test() {
-        const params = new URLSearchParams(initData)
+    async function addReferral() {
+        try {
+            const params = new URLSearchParams(initData)
 
-        const userField = params.get('user')
+            const userField = params.get('user')
 
-        if (userField) {
-            try {
-                const userData = JSON.parse(userField)
-
-                const telegramUserId = userData.id
-
-                alert("Telegram User ID:", telegramUserId)
-            } catch (error) {
-                alert("Ошибка при парсинге данных пользователя:", error)
+            if (!userField) {
+                throw new Error("Поле 'user' не найдено в initData")
             }
-        } else {
-            alert("Поле 'user' не найдено в initData")
+
+            const userData = JSON.parse(userField)
+
+            const telegramUserId = userData.id
+
+            const url = new URL('https://tapalka.wizardstech.ru:8443/api/users/referrals/add')
+            url.searchParams.set('ref_by', telegramUserId)
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'initData': initData
+                }
+            })
+
+            if (!response.ok) {
+                const errorDetails = await response.text()
+                throw new Error(`Ошибка HTTP! Status: ${response.status}, Details: ${errorDetails}`)
+            }
+
+            const result = await response.json()
+            alert("Реферал успешно добавлен! Ответ сервера: " + JSON.stringify(result))
+        } catch (error) {
+            console.error("Произошла ошибка:", error)
+            alert("Ошибка при добавлении реферала: " + error.message)
         }
     }
 
-    test()
+    addReferral()
 
     const bonsaiData = [
         {
