@@ -20,18 +20,15 @@ function getTokenValue(tokenValue) {
 
 async function fetchUserData() {
     try {
-        // Получаем initData из глобального объекта Telegram WebApp
         const initData = window.Telegram.WebApp.initData
 
-        // Выполняем запрос с передачей заголовка 'initData'
         const response = await fetch('https://tapalka.wizardstech.ru:8443/api/users/me', {
             method: 'GET',
             headers: {
-                'initData': initData // Передаем initData в заголовках
+                'initData': initData
             }
         })
 
-        // Проверяем статус ответа
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`)
         }
@@ -63,7 +60,6 @@ async function fetchUserData() {
     }
 }
 
-// Проверяем, что Telegram WebApp доступен
 if (window.Telegram && window.Telegram.WebApp) {
     fetchUserData()
 } else {

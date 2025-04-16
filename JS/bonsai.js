@@ -35,14 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const result = await response.json()
-            alert("Реферал успешно добавлен! Ответ сервера: " + JSON.stringify(result))
+            console.log("Реферал успешно добавлен! Ответ сервера: " + JSON.stringify(result))
         } catch (error) {
             console.error("Произошла ошибка:", error)
-            alert("Ошибка при добавлении реферала: " + error.message)
+            console.log("Ошибка при добавлении реферала: " + error.message)
         }
     }
 
-    addReferral()
+    // addReferral()
 
     const bonsaiData = [
         {
@@ -96,6 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'GET',
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
+                headers: {
+                    'initData': initData
+                }
             })
 
             if (!response.ok) {

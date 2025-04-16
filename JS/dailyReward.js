@@ -1,8 +1,11 @@
 import NotificationManager from "./notifications.js"
 const notificationManager = new NotificationManager()
 
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.get__reward__button').forEach(button => {
+function setupRewardButtons(container = document) {
+    container.querySelectorAll('.get__reward__button').forEach(button => {
+        if (button.dataset.bound) return
+        button.dataset.bound = true
+
         button.addEventListener('click', (event) => {
             const card = event.target.closest('.daily__reward__card')
             if (!card || !card.classList.contains('ready__to__get')) {
@@ -10,9 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const day = card.getAttribute('data-day')
-
             button.textContent = `День ${day}`
-
             card.classList.remove('ready__to__get')
 
             const rewardValue = card.querySelector('.daily__reward__value')
@@ -89,5 +90,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 notificationManager.createNotification(`Получено ${rewardValue.textContent} монет`)
             }
         })
+    })
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setupRewardButtons()
+
+    const observer = new MutationObserver(mutations => {
+        for (const mutation of mutations) {
+            mutation.addedNodes.forEach(node => {
+                if (node.nodeType === 1) {
+                    if (node.classList.contains('daily__reward__card') || node.querySelector('.daily__reward__card')) {
+                        setupRewardButtons(node)
+                    }
+                }
+            })
+        }
+    })
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
     })
 })

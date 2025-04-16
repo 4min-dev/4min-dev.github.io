@@ -1,15 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const eventCategoryItems = document.querySelectorAll('.event__category')
+    const container = document.querySelector('.event__navbar__menu')
 
-    eventCategoryItems.forEach(item => {
-        item.addEventListener('click', (event) => {
-            if (event.target.closest('.event__category')) {
-                eventCategoryItems.forEach(category => {
-                    category.classList.remove('active')
-                })
+    container.addEventListener('click', (event) => {
+        const clickedCategory = event.target.closest('.event__category')
 
-                item.classList.add('active')
-            }
-        })
+        if (clickedCategory) {
+            const allCategories = container.querySelectorAll('.event__category')
+
+            allCategories.forEach(category => {
+                category.classList.remove('active')
+            })
+
+            clickedCategory.classList.add('active')
+        }
     })
 })

@@ -1218,6 +1218,7 @@ nav button.active svg path {
     position: relative;
     gap: 6px;
     transition: all .4s;
+   
 }
 
 .event__category__name {
@@ -1227,6 +1228,7 @@ nav button.active svg path {
     letter-spacing: 0%;
     color: rgba(76, 76, 76, 1);
     transition: color .4s;
+    white-space: nowrap;
 }
 
 .event__category::before {
@@ -1251,6 +1253,8 @@ nav button.active svg path {
     font-weight: 500;
     font-size: 14px;
     line-height: 15.4px;
+    height: calc(20px - 4px);
+    min-width: calc(19px - 10px);
     letter-spacing: 0%;
     color: rgba(255, 255, 255, .2);
     transition: all .4s;
@@ -1316,6 +1320,10 @@ nav button.active svg path {
     line-height: 14px;
     letter-spacing: 0%;
     color: white;
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .event__card__award__container {
@@ -1589,7 +1597,7 @@ nav button.active svg path {
     position: relative;
     width: fit-content;
     height: calc(36px - (11.5px * 2));
-    width: 220;
+    width: calc(220px - (38px + 16px));
     border-radius: 1000px;
     padding: 11.5px 38px 11.5px 16px;
     background: rgba(255, 255, 255, 0.1);
@@ -1603,6 +1611,11 @@ nav button.active svg path {
     letter-spacing: 0%;
     text-decoration: none;
     color: rgba(255, 255, 255, .5);
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 200px;
 }
 
 .copy__link__button {

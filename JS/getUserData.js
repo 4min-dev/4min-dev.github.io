@@ -4,7 +4,8 @@ async function getUserData() {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Accpet': 'application/json'
+                'Accpet': 'application/json',
+                'initData':window.Telegram.WebApp.initData
             }
         })
         const data = await response.json()
