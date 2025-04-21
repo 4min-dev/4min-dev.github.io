@@ -119,8 +119,8 @@ button {
 }
 
 section:not(#landing__section, #structure__section, #about__section, #download__presentation__section, #partners__section) {
-    margin-left: 56px;
-    margin-right: 56px;
+    padding-left: 56px;
+    padding-right: 56px;
 }
 
 img {
@@ -623,7 +623,7 @@ img {
         margin-left: 16px;
         margin-right: 16px;
         padding: 40px;
-        margin-top: 105px;
+        margin-top: 11px;
         height: calc(100vh - (80px + 105px));
     }
 
