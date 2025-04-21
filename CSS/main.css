@@ -136,6 +136,7 @@ img {
     background-image: url('/static/img/landingBackground.png');
     background-size: cover;
     background-repeat: no-repeat;
+    border-radius: 12px;
 }
 
 #landing__section::before {
