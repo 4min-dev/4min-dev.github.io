@@ -6,12 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if(swiperContainer.classList.contains('team__cards__container')) {
             if (window.innerWidth <= 1024) {
                 return {
-                    slidesPerView: 1.8,
+                    slidesPerView: 1.85,
                     spaceBetween: 12
                 }
             } else {
                 return {
-                    slidesPerView: 5.15,
+                    slidesPerView: "auto",
                     spaceBetween: 12
                 }
             }

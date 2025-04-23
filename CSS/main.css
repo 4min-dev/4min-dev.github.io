@@ -209,7 +209,7 @@ img {
 }
 
 .landing__description {
-    font-family: 'Gilroy'sans-serif;
+    font-family: 'Gilroy', sans-serif;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.85);
 }
@@ -282,7 +282,7 @@ img {
 }
 
 .variants__section__description {
-    font-family: 'Gilroy'sans-serif;
+    font-family: 'Gilroy', sans-serif;
     font-weight: 500;
     line-height: 140%;
     color: #616060;
@@ -315,9 +315,11 @@ img {
 .variants__section__card__number {
     font-weight: 500;
     line-height: 140%;
-    font-family: 'Gilroy'sans-serif;
+    font-family: 'Gilroy', sans-serif;
     color: #222222;
     transition: color .4s;
+    letter-spacing: -2%;
+
 }
 
 .variants__section__card__number::before {
@@ -339,7 +341,7 @@ img {
 }
 
 .variants__section__card__description {
-    font-family: 'Gilroy'sans-serif;
+    font-family: 'Gilroy', sans-serif;
     font-weight: 500;
     line-height: 140%;
     color: #616060;
@@ -412,7 +414,7 @@ img {
 }
 
 .facade__card__description {
-    font-family: 'Gilroy'sans-serif;
+    font-family: 'Gilroy', sans-serif;
     font-weight: 500;
     line-height: 140%;
     color: #616060;
@@ -454,7 +456,7 @@ img {
 }
 
 .about__section__card__description {
-    font-family: 'Gilroy'sans-serif;
+    font-family: 'Gilroy', sans-serif;
     font-weight: 500;
     line-height: 140%;
     color: #616060;
@@ -503,7 +505,7 @@ img {
 }
 
 .person__description {
-    font-family: 'Gilroy'sans-serif;
+    font-family: 'Gilroy', sans-serif;
     font-weight: 500;
     line-height: 140%;
     color: #BABABA
@@ -520,7 +522,7 @@ img {
 }
 
 .stats__description {
-    font-family: 'Gilroy'sans-serif;
+    font-family: 'Gilroy', sans-serif;
     font-weight: 500;
     line-height: 140%;
     color: #616060;
@@ -543,7 +545,7 @@ img {
 }
 
 .portfolio__card__description {
-    font-family: 'Gilroy'sans-serif;
+    font-family: 'Gilroy', sans-serif;
     font-weight: 400;
     line-height: 140%;
     color: #616060;
@@ -560,7 +562,7 @@ img {
 }
 
 .download__presentation__description {
-    font-family: 'Gilroy'sans-serif;
+    font-family: 'Gilroy', sans-serif;
     font-weight: 500;
     line-height: 140%;
     color: white;
@@ -586,7 +588,7 @@ img {
     color: white;
 }
 
-.footer__copyright  span.italic {
+.footer__copyright span.italic {
     transition: all 150ms ease;
 }
 
@@ -612,6 +614,7 @@ img {
     .header__navbar__link:not(:first-child)::before {
         margin-right: 28.75px;
         margin-left: 28.75px;
+        width: 11px;
         font-size: 20px;
         line-height: 95%;
         content: '/';
@@ -793,7 +796,6 @@ img {
 
     .variants__section__card {
         width: calc(654px - 80px);
-        min-height: calc(275px - 80px);
         gap: 40px;
         border-radius: 12px;
         padding: 40px;
@@ -801,6 +803,7 @@ img {
 
     .variants__section__card__number {
         font-size: 24px;
+        height: 34px;
     }
 
     .variants__section__card__text__container {
@@ -861,8 +864,8 @@ img {
 
     .facade__card__title::before {
         margin-right: 10px;
-        width: 22px;
-        height: 23px;
+        width: 24px;
+        height: 24px;
         background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none"><path d="M9.75 1.95374C10.5235 1.50716 11.4765 1.50716 12.25 1.95374L18.6423 5.64434C19.4158 6.09092 19.8923 6.91624 19.8923 7.8094V15.1906C19.8923 16.0838 19.4158 16.9091 18.6423 17.3557L12.25 21.0463C11.4765 21.4928 10.5235 21.4928 9.75 21.0463L3.3577 17.3557C2.58419 16.9091 2.1077 16.0838 2.1077 15.1906V7.8094C2.1077 6.91624 2.58419 6.09092 3.3577 5.64434L9.75 1.95374Z" stroke="%23C7A347" stroke-width="3"/></svg>');
     }
 
@@ -872,6 +875,10 @@ img {
 
     .facade__card__link__container {
         font-size: 20px;
+    }
+
+    .facade__card__link__container svg {
+        height: 40px;
     }
 
     #structure__section {
@@ -885,6 +892,7 @@ img {
 
     #structure__section .variants__section__line__container {
         width: 262px;
+        min-width: 262px;
         margin-bottom: 16px !important;
     }
 
@@ -947,7 +955,7 @@ img {
     }
 
     .structure__card__description {
-        font-family: 'Gilroy'sans-serif;
+        font-family: 'Gilroy', sans-serif;
         font-weight: 500;
         font-size: 20px;
         line-height: 140%;
@@ -1053,6 +1061,8 @@ img {
 
     .team__card {
         height: 361px !important;
+        min-width: 317px;
+        max-width: 317px !important;
         border-radius: 8px;
     }
 
@@ -1105,6 +1115,10 @@ img {
         margin-top: 256px;
     }
 
+    #portfolio__section .variants__section__line__container {
+        min-width: 702px;
+    }
+
     #portfolio__section .variants__section__line__container::before {
         width: 662px;
     }
@@ -1128,7 +1142,7 @@ img {
     }
 
     .portfolio__card {
-        width: calc(50% - 20px);
+        width: calc(50% - 10px);
         gap: 32px;
         min-height: 566px;
     }
@@ -1189,7 +1203,7 @@ img {
     }
 
     .download__presentation__section__buttons a {
-        width: 232px;
+        width: 228px;
         height: 64px;
     }
 
@@ -1276,7 +1290,7 @@ img {
     }
 
     .footer__heading__card__description {
-        font-family: 'Gilroy'sans-serif;
+        font-family: 'Gilroy', sans-serif;
         font-weight: 500;
         font-size: 22px;
         line-height: 140%;
@@ -1290,7 +1304,7 @@ img {
 
     .media__card {
         gap: 4px;
-        font-family: 'Gilroy'sans-serif;
+        font-family: 'Gilroy', sans-serif;
         font-weight: 500;
         font-size: 22px;
         line-height: 140%;
@@ -1305,7 +1319,7 @@ img {
 
     .footer__phone__card {
         gap: 12px;
-        font-family: 'Gilroy'sans-serif;
+        font-family: 'Gilroy', sans-serif;
         font-weight: 500;
         font-size: 52px;
         line-height: 140%;
@@ -1322,7 +1336,7 @@ img {
     }
 
     .website__name {
-        font-family: 'Gilroy'sans-serif;
+        font-family: 'Gilroy', sans-serif;
         font-weight: 500;
         font-size: 20px;
         line-height: 140%;
@@ -1333,7 +1347,7 @@ img {
         width: 208px;
         height: 42px;
         border: 1px solid #C7A347;
-        font-family: 'Gilroy'sans-serif;
+        font-family: 'Gilroy', sans-serif;
         font-weight: 500;
         border-radius: 1000px;
         text-decoration: none;
@@ -1382,6 +1396,7 @@ img {
 
     section:not(#landing__section, #structure__section, #about__section, #download__presentation__section, #partners__section) {
         margin-left: 20px;
+        padding:0px !important;
         margin-right: 20px;
     }
 
@@ -1704,7 +1719,7 @@ img {
     }
 
     .structure__card__description {
-        font-family: 'Gilroy'sans-serif;
+        font-family: 'Gilroy', sans-serif;
         font-weight: 500;
         font-size: 13px;
         line-height: 140%;
@@ -1967,6 +1982,10 @@ img {
         width: 211px;
     }
 
+    #partners__section .variants__section__description {
+        font-size: 12px !important;
+    }
+
     .partners__container {
         margin-top: 40px;
         gap: 24px;
@@ -2021,7 +2040,7 @@ img {
     }
 
     .footer__heading__card__description {
-        font-family: 'Gilroy'sans-serif;
+        font-family: 'Gilroy', sans-serif;
         font-weight: 500;
         font-size: 14px;
         line-height: 140%;
@@ -2035,7 +2054,7 @@ img {
 
     .media__card {
         gap: 4px;
-        font-family: 'Gilroy'sans-serif;
+        font-family: 'Gilroy', sans-serif;
         font-weight: 500;
         font-size: 14px;
         line-height: 140%;
@@ -2051,7 +2070,7 @@ img {
 
     .footer__phone__card {
         gap: 4px;
-        font-family: 'Gilroy'sans-serif;
+        font-family: 'Gilroy', sans-serif;
         font-weight: 500;
         font-size: 20px;
         line-height: 140%;
@@ -2059,7 +2078,7 @@ img {
     }
 
     .website__name {
-        font-family: 'Gilroy'sans-serif;
+        font-family: 'Gilroy', sans-serif;
         font-weight: 500;
         font-size: 14px;
         opacity: .5;
@@ -2096,6 +2115,7 @@ img {
         flex-direction: row;
         gap: 8px;
     }
+
     .navbar__popup__overlay {
         position: fixed;
         left: 0;
@@ -2107,11 +2127,13 @@ img {
         transition: opacity 0.4s ease, visibility 0.4s ease;
         z-index: 1000;
     }
-    
+
     .navbar__popup {
         position: absolute;
         top: 26px;
         right: 18px;
+        width: calc(170px - 32px);
+        height: calc(251px - 48px);
         gap: 32px;
         border-radius: 16px;
         padding: 24px 16px;
@@ -2121,25 +2143,26 @@ img {
         opacity: 0;
         transition: transform 0.4s ease, opacity 0.4s ease;
     }
-    
+
     .navbar__popup__overlay.active {
         opacity: 1;
         visibility: visible;
         z-index: 1000;
     }
-    
+
     .navbar__popup__overlay.active .navbar__popup {
         opacity: 1;
         transform: translateX(0);
     }
-    
+
 
     .navbar__popup a {
         font-weight: 600;
+        white-space: nowrap;
         font-size: 14px;
         text-decoration: none;
         width: 100%;
         line-height: 110.00000000000001%;
-        color:#222222;
+        color: #222222;
     }
 }
