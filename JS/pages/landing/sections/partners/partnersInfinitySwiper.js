@@ -1,10 +1,4 @@
-function isMobileDevice() {
-    if (/Mobi|Android/i.test(navigator.userAgent)) {
-        return true
-    } else {
-        return false
-    }
-}
+import { isMobileDevice } from "../../../../isMobileDevice.js"
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('hsx')
