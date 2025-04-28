@@ -19,5 +19,5 @@ document.addEventListener("DOMContentLoaded", function () {
         updateCurrentPreview(currentCard.getAttribute('data-id'), relativeY)
     }
 
-    variantCards.forEach((card) => card.addEventListener('click', handleSelectCard))
+    variantCards.forEach((card) => card.addEventListener('mouseenter', handleSelectCard))
 })

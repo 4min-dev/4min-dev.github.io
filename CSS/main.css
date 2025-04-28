@@ -1382,6 +1382,11 @@ img {
         color: #222222;
     }
 
+    .footer__phone__card svg {
+        width: 44px;
+        height: 44px;
+    }
+
     .copyright__container {
         gap: 24px;
     }
@@ -1400,8 +1405,8 @@ img {
     }
 
     .author__link {
-        width: 208px;
-        height: 42px;
+        width: 206px;
+        height: 40px;
         border: 1px solid #C7A347;
         font-family: 'Gilroy', sans-serif;
         font-weight: 500;
@@ -2175,7 +2180,6 @@ img {
     }
 
     .footer__heading__card__description {
-        font-family: 'Gilroy', sans-serif;
         font-weight: 500;
         font-size: 14px;
         line-height: 140%;
@@ -2189,7 +2193,6 @@ img {
 
     .media__card {
         gap: 4px;
-        font-family: 'Gilroy', sans-serif;
         font-weight: 500;
         font-size: 14px;
         line-height: 140%;
@@ -2205,7 +2208,6 @@ img {
 
     .footer__phone__card {
         gap: 4px;
-        font-family: 'Gilroy', sans-serif;
         font-weight: 500;
         font-size: 20px;
         line-height: 140%;
@@ -2213,7 +2215,6 @@ img {
     }
 
     .website__name {
-        font-family: 'Gilroy', sans-serif;
         font-weight: 500;
         font-size: 14px;
         opacity: .5;
