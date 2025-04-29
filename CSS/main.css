@@ -2100,6 +2100,10 @@ img {
         width: 100%;
     }
 
+    .download__presentation__section__buttons a {
+        width: calc(100% - 4px);
+    }
+
     #partners__section {
         position: relative;
         margin-top: 40px;
