@@ -18,9 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalSlides = slides.length
 
     function updateSlider() {
+        const isMobile = isMobileDevice()
+        const maxIndex = isMobile ? totalSlides - 1 : Math.max(totalSlides - 3, 0)
+    
         const percentage = (currentIndex / totalSlides) * 100
         previewContainer.style.transform = `translateX(-${percentage}%)`
-        indicator.style.width = `${(currentIndex + 1) / (totalSlides - 2) * 100}%`
+    
+        if (maxIndex > 0) {
+            indicator.style.width = `${(currentIndex / maxIndex) * 100}%`
+        } else {
+            indicator.style.width = `100%`
+        }
     }
 
     function moveSlide(direction) {
