@@ -1,6 +1,7 @@
 import { isMobileDevice } from "./isMobileDevice.js"
 import { updateCurrentPreview } from "./pages/landing/sections/variants/UI/updateCurrentPreview.js"
-import { updateVariantsCard } from "./pages/landing/sections/variants/UI/updateVariantsCard.JS"
+import { updateVariantsCard } from "./pages/landing/sections/variants/UI/updateVariantsCard.js"
+
 import { blockScroll } from "./scroll/blockScroll.js"
 import { unblockScroll } from "./scroll/unblockScroll.js"
 
