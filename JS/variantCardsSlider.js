@@ -1,23 +1,101 @@
-import { updateCurrentPreview } from "./pages/landing/sections/variants/UI/updateCurrentPreview.js"
+import { updateVariantsCard } from "./pages/landing/sections/variants/UI/updateVariantsCard.js"
+import { blockScroll } from "./scroll/blockScroll.js"
+import { unblockScroll } from "./scroll/unblockScroll.js"
+
 
 document.addEventListener("DOMContentLoaded", function () {
+
     const cardsContainer = document.querySelector('.variants__section__cards__container')
-    const variantCards = cardsContainer.querySelectorAll('.variants__section__card')
-    const variantsSection = document.querySelector('.variants__section__main__ui__container')
+    const instructionCards = document.querySelectorAll('.variants__section__card')
 
-    function handleSelectCard(event) {
-        variantCards.forEach((card) => card.classList.remove('active'))
+    let isCardsScrolling = false
 
-        const currentCard = event.currentTarget
-        currentCard.classList.add('active')
+    let activeCardIndex = 1
+    let isCardsHovered = false
 
-        const cardRect = currentCard.getBoundingClientRect()
-        const sectionRect = variantsSection.getBoundingClientRect()
+    let lastTouchY
+    let lastTouchTime = 0
 
-        const relativeY = cardRect.top - sectionRect.top
+    function handleScroll(event) {
 
-        updateCurrentPreview(currentCard.getAttribute('data-id'), relativeY)
+        if (isCardsScrolling) return;
+
+        let deltaY = 0
+        const now = Date.now()
+        const isTouchEvent = typeof TouchEvent !== 'undefined' && event instanceof TouchEvent
+
+        if (event instanceof WheelEvent) {
+            deltaY = event.deltaY
+        } else if (event instanceof TouchEvent) {
+            const touch = event.touches[0]
+            deltaY = lastTouchY ? lastTouchY - touch.clientY : 0
+            lastTouchY = touch.clientY
+        }
+
+        if (isTouchEvent && (now - lastTouchTime) < 300) {
+            return
+        }
+
+        lastTouchTime = now
+
+        if ((deltaY > 0) && activeCardIndex < instructionCards.length && isCardsHovered) {
+            setIsCardsScrolling(true)
+            setNewCardIndex((prev) => prev + 1)
+
+            setTimeout(() => setIsCardsScrolling(false), 500)
+
+            updateVariantsCard(activeCardIndex, instructionCards, deltaY)
+        } else if ((deltaY < 0 && activeCardIndex > 1) && isCardsHovered) {
+            setIsCardsScrolling(true)
+            setNewCardIndex((prev) => prev - 1)
+
+            setTimeout(() => setIsCardsScrolling(false), 500)
+
+            updateVariantsCard(activeCardIndex, instructionCards, deltaY)
+        } else {
+            unblockScroll()
+        }
+        console.log(deltaY)
+        console.log(activeCardIndex)
+        console.log(isCardsHovered)
     }
 
-    variantCards.forEach((card) => card.addEventListener('mouseenter', handleSelectCard))
+    function setNewCardIndex(fn) {
+        blockScroll()
+        activeCardIndex = fn(activeCardIndex)
+    }
+
+    function setIsCardsScrolling(isScrolling) {
+        isCardsScrolling = isScrolling
+    }
+
+    cardsContainer.addEventListener('mouseenter', () => {
+        blockScroll()
+        isCardsHovered = true
+    })
+
+    cardsContainer.addEventListener('mouseleave', () => {
+        unblockScroll()
+        isCardsHovered = false
+    })
+
+    cardsContainer.addEventListener('touchstart', () => {
+        blockScroll()
+        isCardsHovered = true
+    })
+
+    cardsContainer.addEventListener('touchend', () => {
+        unblockScroll()
+        isCardsHovered = false
+    })
+
+    window.addEventListener('wheel', handleScroll, { passive: false })
+    window.addEventListener('touchstart', (event) => {
+        if (event.touches.length > 0) {
+            lastTouchY = event.touches[0].clientY
+        }
+    })
+    window.addEventListener('touchmove', handleScroll, { passive: false })
+
+    updateVariantsCard(activeCardIndex, instructionCards)
 })
