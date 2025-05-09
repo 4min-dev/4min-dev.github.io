@@ -1,5 +1,6 @@
 import Animations from "../../animations.js"
 
+
 const animation = new Animations()
 
 const variantsSection = document.getElementById('variants__section')
@@ -23,14 +24,14 @@ animation.transformToLeft(facadeSection, '.facade__section__description__contain
 animation.transformToRight(structureSection, '.structure__section__line__container')
 animation.transformToLeft(structureSection, '.structure__section__text__container')
 
-animation.transformToRight(aboutSection, '.about__section__text__container')
+animation.transformToRight(aboutSection, '.about__section__heading__text__container')
 animation.transformToRight(aboutSection, '.about__section__line__container')
 animation.transformToLeft(aboutSection, '.about__section__description')
 
-animation.transformToRight(aboutSection, `.to__right__card-1`)
-animation.transformToRight(aboutSection, `.to__right__card-2`)
-animation.transformToLeft(aboutSection, `.to__left__card-1`)
-animation.transformToLeft(aboutSection, `.to__left__card-2`)
+animation.transformToRight(aboutSection, '.to__right__card-1')
+animation.transformToRight(aboutSection, '.to__right__card-2')
+animation.transformToLeft(aboutSection, '.to__left__card-1')
+animation.transformToLeft(aboutSection, '.to__left__card-2')
 
 animation.transformToRight(portfolioSection, '.portfolio__section__line__container')
 
