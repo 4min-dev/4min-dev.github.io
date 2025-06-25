@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/payment-method.css" />
+    <script src="../JS/modal.js" defer></script>
+    <title>Выбор способа оплаты</title>
+</head>
+<body>
+    <div class="modal">
+        <div class="modal__container">
+            <div class="modal__back">
+                <button class="modal__back-btn"><img src="../static/img/modal-back.svg" alt="" /></button>
+                <p class="modal__back-title">Способ оплаты</p>
+            </div>
+            <div class="modal__inner">
+                <h3 class="modal__inner-title">Кошелёк Bonsai Casino</h3>
+                <div class="modal__item">
+                    <div class="modal__item-img-text">
+                        <div class="modal__item-img modal__item-img--BC">
+                            <img src="../static/img/BS.svg" alt="" />
+                        </div>
+                        <div class="modal__item-text">
+                            <span class="modal__item-text-main modal__item-text-main--BC">BC Balance</span>
+                            <span class="modal__item-text-secondary">₽478 377.00</span>
+                        </div>
+                    </div>
+                    <label class="custom-radio">
+                        <input class="modal__item-radio" id="no-label-radio" type="radio" name="payment" />
+                        <span class="radio-indicator"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="modal__inner">
+                <h3 class="modal__inner-title">Карты SWIFT</h3>
+                <div class="modal__item">
+                    <div class="modal__item-img-text">
+                        <div class="modal__item-img">
+                            <img src="../static/img/visa.svg" alt="" />
+                        </div>
+                        <div class="modal__item-text">
+                            <span class="modal__item-text-main">Visa</span>
+                        </div>
+                    </div>
+                    <label class="custom-radio">
+                        <input class="modal__item-radio" id="no-label-radio" type="radio" name="payment" />
+                        <span class="radio-indicator"></span>
+                    </label>
+                    
+                </div>
+                <div class="modal__item">
+                    <div class="modal__item-img-text">
+                        <div class="modal__item-img">
+                            <img src="../static/img/master card.svg" alt="" />
+                        </div>
+                        <div class="modal__item-text">
+                            <span class="modal__item-text-main">MasterCard</span>
+                        </div>
+                    </div>
+                    <label class="custom-radio">
+                        <input class="modal__item-radio" id="no-label-radio" type="radio" name="payment" />
+                        <span class="radio-indicator"></span>
+                    </label>
+                </div>
+                <div class="modal__item">
+                    <div class="modal__item-img-text">
+                        <div class="modal__item-img">
+                            <img src="../static/img/paypal.svg" alt="" />
+                        </div>
+                        <div class="modal__item-text">
+                            <span class="modal__item-text-main">PayPall</span>
+                        </div>
+                    </div>
+                    <label class="custom-radio">
+                        <input class="modal__item-radio" id="no-label-radio" type="radio" name="payment" />
+                        <span class="radio-indicator"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="modal__inner">
+                <h3 class="modal__inner-title">Другие способы</h3>
+                <div class="modal__item">
+                    <div class="modal__item-img-text">
+                        <div class="modal__item-img">
+                            <img src="../static/img/national-payment-system-mir 1.svg" alt="" />
+                        </div>
+                        <div class="modal__item-text">
+                            <span class="modal__item-text-main">Карты МИР</span>
+                        </div>
+                    </div>
+                    <label class="custom-radio">
+                        <input class="modal__item-radio" id="no-label-radio" type="radio" name="payment" />
+                        <span class="radio-indicator"></span>
+                    </label>
+                </div>
+                <div class="modal__item">
+                    <div class="modal__item-img-text">
+                        <div class="modal__item-img">
+                            <img src="../static/img/СБП_логотип 1.svg" alt="" />
+                        </div>
+                        <div class="modal__item-text">
+                            <span class="modal__item-text-main">СБП</span>
+                        </div>
+                    </div>
+                    <label class="custom-radio">
+                        <input class="modal__item-radio" id="no-label-radio" type="radio" name="payment" />
+                        <span class="radio-indicator"></span>
+                    </label>
+                </div>
+            </div>
+          </div>
+          <div class="modal__container-btn">
+              <div class="modal__btn">
+                  <button class="modal__btn-button">Продолжить</button>
+              </div>
+          </div>
+    </div>
+</body>
+</html>
