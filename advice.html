@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/main.css">
+    <title>Advice</title>
+</head>
+
+<body>
+    <p class="text__6x1 flex justify__center">
+        🌞
+    </p>
+
+    <p class="mt__2 font__semibold flex justify__center">
+        Совет дня
+    </p>
+
+    <p class="mt__2 text__sm  text__center">
+        Карта с напутствием для вдохновения и ясности каждый день. Бесплатно.
+    </p>
+
+    <div class="theme__card px__4 advice__card active flex align__center justify__space__between">
+        <div class="theme__card__main flex align__center">
+            <p class="theme__card__title text__sm">
+                Совет дня
+            </p>
+        </div>
+
+        <label class="switch">
+            <input type="checkbox" />
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="theme__cards__block flex column">
+        <a href="/timer.html" class="theme__card px__4 flex align__center justify__space__between">
+            <div class="theme__card__main flex align__center">
+                <p class="theme__card__title text__sm">
+                    Время
+                </p>
+            </div>
+
+            <div class="theme__card__value__container flex align__center">
+                <p class="theme__card__value text__sm">
+                    08:00 – 09:00
+                </p>
+
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+                </svg>
+            </div>
+        </a>
+
+        <div class="theme__card px__4 flex align__center justify__space__between">
+            <div class="theme__card__main flex align__center">
+                <p class="theme__card__title text__sm">
+                    Часовой пояс
+                </p>
+            </div>
+
+            <div class="theme__card__value__container flex align__center">
+                <p class="theme__card__value text__sm">
+                    Europe/Moscow
+                </p>
+
+                <svg class="invisible" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor" class="w-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <a href="/home.html" class="advice__button  theme__button flex align__center justify__center text__uppercase">
+        Готово
+    </a>
+</body>
+<script type="module" src="/JS/themeRender.js"></script>
+
+</html>
