@@ -587,6 +587,7 @@ button {
     color: #2D2E36;
 }
 
-.balance__container span {
+.balance__container span,
+.timer__page__primary__text {
     color: var(--tg__theme__text__color)
 }
