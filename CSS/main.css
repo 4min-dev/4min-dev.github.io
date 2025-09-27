@@ -25,7 +25,8 @@
     --text__2x1: 1.5rem;
     --text__2x1__line__height: calc(2/1.5);
     --text__6x1: 3.75rem;
-    --text__6x1__line__height: 1
+    --text__6x1__line__height: 1;
+    --primary__hint: #707579
 }
 
 * {
@@ -116,7 +117,7 @@ button {
 }
 
 .balance__card h3 {
-    color: #707579;
+    color: var(--primary__hint);
     height: 24px;
 }
 
@@ -149,18 +150,18 @@ button {
 
 .theme__card .theme__card__description {
     margin-top: calc(var(--theme__card__spacing) * .5);
-    color: #707579;
+    color: var(--primary__hint);
 }
 
 .theme__card:not(.donate__variant) svg {
-    stroke: #707579;
+    stroke: var(--primary__hint);
     width: 16px;
     height: 16px;
 }
 
 .theme__card .theme__card__value {
     margin-inline-end: calc(var(--theme__card__spacing) * 2);
-    color: #707579;
+    color: var(--primary__hint);
 }
 
 .theme__cards__block .theme__card {
@@ -219,7 +220,7 @@ button {
 }
 
 .theme__card__selector__input:not(:checked) {
-    border: 1px solid #707579;
+    border: 1px solid var(--primary__hint);
 }
 
 .theme__card__selector__input:checked {
@@ -244,7 +245,7 @@ button {
 }
 
 .section__block>p {
-    color: #707579;
+    color: var(--primary__hint);
 }
 
 .section__block>.theme__input {
@@ -254,7 +255,7 @@ button {
 .theme__input {
     padding-block: calc(var(--theme__card__spacing) * 2);
     padding-inline: calc(var(--theme__card__spacing) * 3);
-    border-color: #707579;
+    border-color: var(--primary__hint);
     border-radius: var(--radius__md);
     border: none;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -387,7 +388,7 @@ button {
 }
 
 .order__text__container .text__xs {
-    color: #707579
+    color: var(--primary__hint)
 }
 
 .order__text__container .text__sm {
@@ -408,7 +409,7 @@ button {
 }
 
 .named__input p {
-    color: #707579
+    color: var(--primary__hint)
 }
 
 .named__input input {
@@ -584,4 +585,8 @@ button {
     line-height: 1.55556;
     font-weight: 600;
     color: #2D2E36;
+}
+
+.balance__container span {
+    color: var(--tg__theme__text__color)
 }
