@@ -28,6 +28,10 @@
     --text__6x1__line__height: 1;
     --primary__hint: #707579;
     --primary__input__background: white;
+    --primary__theme__border__color: #f4f4f5;
+    --agreement__card__title__color: #34363C;
+    --agreement__card__description__color: #2D2E36;
+    --agreement__card__link__color: #000000;
 }
 
 * {
@@ -191,7 +195,7 @@ button {
 
 .section__block .theme__card:not(:first-child),
 .section__block .theme__card:not(:last-child) {
-    border-bottom: 1px solid #f4f4f5;
+    border-bottom: 1px solid var(--primary__theme__border__color);
 }
 
 .selector__card.active::before {
@@ -545,24 +549,24 @@ button {
 }
 
 .user__agreement__card {
-    background: white;
+    background: var(--primary__theme__card__bg);
     gap: 1.14286em;
 }
 
 .user__agreement__card h2 {
     font-weight: 600;
-    color: #2D2E36;
+    color: var(--agreement__card__description__color);
     font-size: 20px;
 }
 
 .user__agreement__card p {
     font-size: 14px;
-    color: #6F7178;
+    color: var(--agreement__card__title__color);
     line-height: 1.71429;
 }
 
 .user__agreement__card a {
-    color: black;
+    color: var(--agreement__card__link__color);
     font-weight: 500;
 }
 
@@ -587,7 +591,7 @@ button {
     font-size: 18px;
     line-height: 1.55556;
     font-weight: 600;
-    color: #2D2E36;
+    color: var(--agreement__card__description__color);
 }
 
 .balance__container span,
