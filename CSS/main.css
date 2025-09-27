@@ -26,7 +26,7 @@
     --text__2x1__line__height: calc(2/1.5);
     --text__6x1: 3.75rem;
     --text__6x1__line__height: 1;
-    --primary__hint: #707579
+    --primary__hint: red
 }
 
 * {
@@ -277,7 +277,7 @@ button {
     bottom: .5rem;
     height: calc(3rem - (.625rem * 2));
     padding: .625rem;
-    background-color: rgb(51, 144, 236);
+    background-color: var(--tg__theme__button__color);
     color: rgb(255, 255, 255);
     text-decoration: none;
     border-radius: 0.75rem;
