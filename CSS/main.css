@@ -26,7 +26,7 @@
     --text__2x1__line__height: calc(2/1.5);
     --text__6x1: 3.75rem;
     --text__6x1__line__height: 1;
-    --primary__hint: red
+    --primary__hint: #707579
 }
 
 * {
