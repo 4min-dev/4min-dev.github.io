@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const webApp = window.Telegram.WebApp
-
+    console.log(webApp)
     if (webApp.colorScheme === 'dark') {
         document.documentElement.style.setProperty('--primary__body__bg', '#0f0f0f')
         document.documentElement.style.setProperty('--primary__theme__card__bg', '#212121')
