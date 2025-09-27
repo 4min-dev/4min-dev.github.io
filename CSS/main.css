@@ -555,13 +555,13 @@ button {
 
 .user__agreement__card h2 {
     font-weight: 600;
-    color: var(--agreement__card__description__color);
+    color: var(--agreement__card__title__color);
     font-size: 20px;
 }
 
 .user__agreement__card p {
     font-size: 14px;
-    color: var(--agreement__card__title__color);
+    color: var(--agreement__card__description__color);
     line-height: 1.71429;
 }
 
@@ -577,7 +577,7 @@ button {
 .user__agreement__card ul li {
     padding-inline-start: .428571em;
     font-size: 14px;
-    color: #6F7178;
+    color: var(--agreement__card__description__color);
     margin-top: .285714em;
     margin-bottom: .285714em;
     line-height: 1.71429;
