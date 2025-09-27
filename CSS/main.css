@@ -26,7 +26,8 @@
     --text__2x1__line__height: calc(2/1.5);
     --text__6x1: 3.75rem;
     --text__6x1__line__height: 1;
-    --primary__hint: #707579
+    --primary__hint: #707579;
+    --primary__input__background: white;
 }
 
 * {
@@ -259,6 +260,8 @@ button {
     border-radius: var(--radius__md);
     border: none;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background: var(--primary__input__background);
+    color: var(--tg__theme__text__color)
 }
 
 .text-tgThemeLinkColor {
@@ -588,6 +591,6 @@ button {
 }
 
 .balance__container span,
-.timer__page__primary__text {
+.primary__text {
     color: var(--tg__theme__text__color)
 }

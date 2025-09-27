@@ -10,5 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.style.setProperty('--tg__theme__link__color', 'rgba(135,116,225)')
         document.documentElement.style.setProperty('--color__background', '#212121')
         document.documentElement.style.setProperty('--primary__hint', '#AAAAAA')
+        document.documentElement.style.setProperty('--primary__input__background', '#212121')
     }
 })
