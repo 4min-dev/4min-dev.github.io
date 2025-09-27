@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         backButton.show()
         backButton.onClick(() => history.back())
     }
-
+    alert(window.location.pathname)
     if (window.location.pathname === "/templates/home.html") {
         backButton.hide()
     } else {
