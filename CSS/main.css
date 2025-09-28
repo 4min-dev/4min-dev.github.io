@@ -506,7 +506,7 @@ button {
     left: 3px;
     top: 50%;
     transform: translateY(-50%);
-    background: var(--primary__theme__card__bg);
+    background: var(--color__primary);
     border-radius: 56px;
     transition: all .2s;
 }
