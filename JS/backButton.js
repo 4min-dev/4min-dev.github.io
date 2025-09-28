@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function initBackButton() {
         backButton.show()
         backButton.onClick(() => {
-            alert(window.location.pathname)
             history.back()
         })
     }
@@ -14,4 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         initBackButton()
     }
+
+    document.querySelector('.hide__back__button').addEventListener('click', () => backButton.hide())
 })
