@@ -362,6 +362,7 @@ button {
 .popup__title {
     font-family: "Roboto", sans-serif;
     padding-left: 2rem;
+    color: var(--tg__theme__text__color)
 }
 
 .donate__variant svg {
@@ -480,7 +481,7 @@ button {
 }
 
 .switch input:checked+.slider {
-    background: var(--tg__theme__button__color)
+    background: var(--primary__theme__card__bg)
 }
 
 .slider {
@@ -501,7 +502,7 @@ button {
     left: 3px;
     top: 50%;
     transform: translateY(-50%);
-    background: var(--primary__body__bg);
+    background: var(--primary__theme__card__bg);
     border-radius: 56px;
     transition: all .2s;
 }
