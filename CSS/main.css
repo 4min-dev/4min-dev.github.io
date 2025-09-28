@@ -485,7 +485,7 @@ button {
 }
 
 .switch input:checked+.slider {
-    background: var(--color__background)
+    background: var(--color__primary)
 }
 
 .slider {
@@ -506,14 +506,13 @@ button {
     left: 3px;
     top: 50%;
     transform: translateY(-50%);
-    background: var(--color__primary);
+    background: var(--color__background);
     border-radius: 56px;
     transition: all .2s;
 }
 
 .switch input:checked+.slider::before {
     transform: translate(18px, -50%);
-    background: var(--color__primary)
 }
 
 .advice__card {
