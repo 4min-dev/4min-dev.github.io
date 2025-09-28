@@ -3,7 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initBackButton() {
         backButton.show()
-        backButton.onClick(() => history.back())
+        backButton.onClick(() => {
+            alert(window.location.pathname)
+            history.back()
+        })
     }
 
     if (window.location.pathname === "/home.html") {
