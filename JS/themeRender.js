@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.documentElement.style.setProperty('--primary__body__bg', themeParams.secondary_bg_color)
     document.documentElement.style.setProperty('--primary__theme__card__bg', themeParams.bg_color)
-    document.documentElement.style.setProperty('--tg__theme__text__color', webApp.text_color)
+    document.documentElement.style.setProperty('--tg__theme__text__color', themeParams.text_color)
     document.documentElement.style.setProperty('--color__primary', themeParams.button_color)
     document.documentElement.style.setProperty('--tg__theme__button__color', themeParams.button_color)
     document.documentElement.style.setProperty('--tg__theme__link__color', themeParams.button_color)

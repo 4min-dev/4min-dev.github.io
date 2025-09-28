@@ -155,6 +155,10 @@ button {
 
 .theme__card .theme__card__description {
     margin-top: calc(var(--theme__card__spacing) * .5);
+}
+
+.theme__card .theme__card__description *,
+.theme__card .theme__card__description {
     color: var(--primary__hint);
 }
 
@@ -596,5 +600,5 @@ button {
 }
 
 .primary__text {
-    color: var(--tg__theme__text__color)
+    color: var(--tg__theme__text__color) !important
 }
