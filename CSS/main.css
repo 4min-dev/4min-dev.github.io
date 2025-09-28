@@ -481,7 +481,7 @@ button {
 }
 
 .switch input:checked+.slider {
-    background: var(--primary__theme__card__bg)
+    background: var(--primary__body__bg)
 }
 
 .slider {
