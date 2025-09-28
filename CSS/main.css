@@ -599,7 +599,6 @@ button {
     color: var(--agreement__card__description__color);
 }
 
-.primary__text,
-.timer__page__primary__text {
+.primary__text {
     color: var(--tg__theme__text__color) !important
 }
