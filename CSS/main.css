@@ -485,7 +485,7 @@ button {
 }
 
 .switch input:checked+.slider {
-    background: var(--primary__body__bg)
+    background: var(--color__background)
 }
 
 .slider {
@@ -513,6 +513,7 @@ button {
 
 .switch input:checked+.slider::before {
     transform: translate(18px, -50%);
+    background: var(--color__primary)
 }
 
 .advice__card {
