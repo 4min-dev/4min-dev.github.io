@@ -135,7 +135,7 @@ button {
     margin-top: calc(var(--theme__card__spacing) * 4);
     height: 44px;
     background: var(--tg__theme__button__color);
-    color: var(--tg__theme__button__text__color);
+    color: var(--tg__theme__text__color);
     text-decoration: none;
     border-radius: var(--theme__card__radius);
     font-size: var(--text__sm);
@@ -599,6 +599,7 @@ button {
     color: var(--agreement__card__description__color);
 }
 
-.primary__text {
+.primary__text,
+.timer__page__primary__text {
     color: var(--tg__theme__text__color) !important
 }
