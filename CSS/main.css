@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --primary__body__bg: #F4F4F4;
-    --primary__theme__card__bg: #FFFFFF;
+    --primary__body__bg: ;
+    --primary__theme__card__bg: ;
     --theme__card__spacing: .25rem;
     --theme__card__radius: .5rem;
     --radius__md: .375rem;
     --radius__lg: .5rem;
-    --tg__theme__link__color: #3390ec;
-    --tg__theme__button__color: #3390ec;
-    --tg__theme__button__text__color: white;
-    --tg__theme__text__color: #000000;
+    --tg__theme__link__color: ;
+    --tg__theme__button__color: ;
+    --tg__theme__button__text__color: ;
+    --tg__theme__text__color: ;
     --text__sm: .875rem;
     --text__sm__line-height: calc(1.25 / .875);
     --text__xl: 1.25rem;
@@ -18,17 +18,17 @@
     --text__xs: .75rem;
     --text__xs__line__height: calc(1 / .75);
     --font-weight-semibold: 600;
-    --color__background: white;
-    --color__primary: rgb(51, 144, 236);
+    --color__background: ;
+    --color__primary: ;
     --border__radius__popup: 1rem;
     --color__default__shadow: rgb(114, 114, 114, 0.251);
     --text__2x1: 1.5rem;
     --text__2x1__line__height: calc(2/1.5);
     --text__6x1: 3.75rem;
     --text__6x1__line__height: 1;
-    --primary__hint: #707579;
-    --primary__input__background: white;
-    --primary__theme__border__color: #f4f4f5;
+    --primary__hint: ;
+    --primary__input__background: ;
+    --primary__theme__border__color: ;
     --agreement__card__title__color: #34363C;
     --agreement__card__description__color: #2D2E36;
     --agreement__card__link__color: #000000;
