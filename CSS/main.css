@@ -286,12 +286,14 @@ button {
     left: .5rem;
     right: .5rem;
     bottom: .5rem;
-    height: calc(3rem - (.625rem * 2));
+    height: 3rem;
     padding: .625rem;
     background-color: var(--tg__theme__button__color);
     color: rgb(255, 255, 255);
     text-decoration: none;
     border-radius: 0.75rem;
+    outline: none;
+    border: none;
 }
 
 #donate__page {

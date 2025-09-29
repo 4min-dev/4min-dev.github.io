@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/main.css">
-    <script src=" https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <title>Order</title>
 </head>
 
 <body>
-    <h1 class="font__semibold text__2x1 flex justify__center">Счет №16977</h1>
+    <h1 class="font__semibold text__2x1 flex justify__center primary__text" id="order-title"></h1>
 
     <div class="flex column order__card">
         <div class="order__text__container flex column">
@@ -18,8 +18,7 @@
                 способ оплаты:
             </p>
 
-            <p class="text__sm font__semibold">
-                Telegram Stars
+            <p class="text__sm font__semibold primary__text" id="payment-method">
             </p>
         </div>
 
@@ -28,8 +27,7 @@
                 количество сообщений:
             </p>
 
-            <p class="text__sm font__semibold">
-                200
+            <p class="text__sm font__semibold primary__text" id="messages-count">
             </p>
         </div>
 
@@ -38,21 +36,21 @@
                 сумма к оплате:
             </p>
 
-            <p class="text__sm font__semibold">
-                600 ⭐️
+            <p class="text__sm font__semibold primary__text" id="payment-amount">
             </p>
         </div>
 
-        <p>
+        <p class="primary__text">
             Для перехода на страницу оплаты нажмите кнопку «Оплатить».
         </p>
     </div>
 
-    <a href="#" class="donate__button theme__button flex align__center justify__center text__uppercase">
+    <button id="pay-button" class="donate__button theme__button flex align__center justify__center text__uppercase">
         Оплатить
-    </a>
+    </button>
 </body>
 <script type="module" src="/JS/themeRender.js"></script>
 <script type="module" src="/JS/backButton.js"></script>
+<script type="module" src="/JS/order.js"></script>
 
 </html>

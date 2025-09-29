@@ -5,29 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/main.css">
-    <script src=" https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <title>Referral</title>
 </head>
 
 <body id="referral__page">
-    <div class="popup__overlay copy__message__popup__overlay flex align__center justify__center">
-        <div class="popup copy__message__popup flex column">
-            <button type="button" class="close__popup__button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
-                    <path
-                        d="M22.6066 21.3934C22.2161 21.0029 21.5829 21.0029 21.1924 21.3934C20.8019 21.7839 20.8019 22.4171 21.1924 22.8076L22.6066 21.3934ZM40.9914 42.6066C41.3819 42.9971 42.0151 42.9971 42.4056 42.6066C42.7961 42.2161 42.7961 41.5829 42.4056 41.1924L40.9914 42.6066ZM21.1924 41.1924C20.8019 41.5829 20.8019 42.2161 21.1924 42.6066C21.5829 42.9971 22.2161 42.9971 22.6066 42.6066L21.1924 41.1924ZM42.4056 22.8076C42.7961 22.4171 42.7961 21.7839 42.4056 21.3934C42.0151 21.0029 41.3819 21.0029 40.9914 21.3934L42.4056 22.8076ZM21.1924 22.8076L40.9914 42.6066L42.4056 41.1924L22.6066 21.3934L21.1924 22.8076ZM22.6066 42.6066L42.4056 22.8076L40.9914 21.3934L21.1924 41.1924L22.6066 42.6066Z"
-                        fill="black" />
-                </svg>
-            </button>
-
-            <span class="popup__title">
-                Ссылка скопирована в буфер обмена
-            </span>
-
-            <button type="button" class="close__popup__button text__uppercase">
-                ок
-            </button>
-        </div>
+    <div id="loading-overlay" class="loading__overlay flex align__center justify__center"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.8); z-index: 1000;">
+        <p class="text__sm">Загрузка...</p>
     </div>
 
     <p class="referral__title text__6x1 flex justify__center">
@@ -48,10 +33,9 @@
         </p>
 
         <div class="copy__input__container flex">
-            <input class="text__sm theme__input copy__input" readonly
-                value="https://t.me/testBot?start=friend__loremipsumdolor" />
+            <input class="text__sm theme__input copy__input" readonly id="ref-link-input" />
 
-            <button type="button" class="copy__link__button">
+            <button type="button" class="copy__link__button" id="copy-button">
                 <svg class="h-5 w-5" stroke="currentColor" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -67,18 +51,19 @@
             ваши друзья
         </p>
 
-        <div class="copy__input__container flex">
-            <input class="text__sm theme__input" readonly placeholder="Пока нет друзей" />
+        <div class="referrals__list flex column" id="referrals-list">
+            <!-- Referrals will be dynamically added here -->
         </div>
     </div>
 
-    <a href="/order.html" class="theme__button flex align__center justify__center text__uppercase">
+    <!-- <a href="/order.html" class="theme__button flex align__center justify__center text__uppercase">
         пригласить друзей
-    </a>
+    </a> -->
 </body>
 <script type="module" src="/JS/copyLink.js"></script>
 <script type="module" src="/JS/popup.js"></script>
 <script type="module" src="/JS/themeRender.js"></script>
 <script type="module" src="/JS/backButton.js"></script>
+<script type="module" src="/JS/backend/referral.js"></script>
 
 </html>
