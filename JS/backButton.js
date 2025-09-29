@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 window.addEventListener('pageshow', (event) => {
+    alert(window.location.pathname)
     const currentPath = window.location.pathname
     const lastPath = sessionStorage.getItem('lastPath')
 
