@@ -9,8 +9,12 @@ function initializePage() {
     function initBackButton() {
         backButton.show()
         backButton.onClick(() => {
-            history.back()
-            window.location.reload()
+            const previousPage = document.referrer || window.history.state?.url || '/';
+            // Добавляем параметр, чтобы сбросить кеш
+            const urlWithNoCache = previousPage.includes('?')
+                ? `${previousPage}&nocache=${Date.now()}`
+                : `${previousPage}?nocache=${Date.now()}`;
+            window.location.replace(urlWithNoCache);
         })
     }
 
