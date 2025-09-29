@@ -6,10 +6,14 @@ window.addEventListener('pageshow', (event) => {
     const currentPath = window.location.pathname
     const lastPath = sessionStorage.getItem('lastPath')
 
+    if (event.persisted) {
+        alert('persisted')
+        window.location.reload()
+    }
+
     if (!sessionStorage.getItem('hasReloaded') || lastPath !== currentPath) {
         sessionStorage.setItem('hasReloaded', 'true')
         sessionStorage.setItem('lastPath', currentPath)
-        alert('reload')
         window.location.reload()
     }
 })
