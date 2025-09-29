@@ -1,21 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
     initializePage()
+    alert('loaded')
+    alert(location.pathname)
 })
 
 window.addEventListener('pageshow', (event) => {
-    alert(window.location.pathname)
-    const currentPath = window.location.pathname
-    const lastPath = sessionStorage.getItem('lastPath')
-
+    alert('page show')
+    alert(location.pathname)
     if (event.persisted) {
         alert('persisted')
         window.location.reload()
-    }
-
-    if (!sessionStorage.getItem('hasReloaded') || lastPath !== currentPath) {
-        sessionStorage.setItem('hasReloaded', 'true')
-        sessionStorage.setItem('lastPath', currentPath)
-        window.location.reload()
+    } else {
+        initializePage()
     }
 })
 
@@ -32,6 +28,7 @@ function initializePage() {
     if (window.location.pathname === "/home.html") {
         backButton.hide()
     } else {
+        backButton.hide()
         initBackButton()
     }
 
