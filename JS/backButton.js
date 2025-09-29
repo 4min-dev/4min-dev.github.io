@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const backButton = window.Telegram?.WebApp.BackButton
-    alert(window.location.pathname)
+    initializePage()
+})
+
+window.addEventListener('pageshow', (event) => {
+    const currentPath = window.location.pathname
+    const lastPath = sessionStorage.getItem('lastPath')
+
+    if (!sessionStorage.getItem('hasReloaded') || lastPath !== currentPath) {
+        sessionStorage.setItem('hasReloaded', 'true')
+        sessionStorage.setItem('lastPath', currentPath)
+        window.location.reload()
+    }
+})
+
+function initializePage() {
+    const backButton = window.Telegram.WebApp.BackButton
 
     function initBackButton() {
         backButton.show()
@@ -16,4 +30,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.querySelector('.hide__back__button').addEventListener('click', () => backButton.hide())
-})
+}

@@ -283,9 +283,9 @@ button {
 .theme__button {
     position: fixed;
     font-weight: 600;
-    left: .5rem;
-    right: .5rem;
-    bottom: .5rem;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
     height: 3rem;
     padding: .625rem;
     background-color: var(--tg__theme__button__color);
@@ -528,6 +528,10 @@ button {
 
 .invisible {
     opacity: 0;
+}
+
+.hidden {
+    display: none !important;
 }
 
 .px__4 {

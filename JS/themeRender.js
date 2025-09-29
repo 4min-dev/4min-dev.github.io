@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const webApp = window.Telegram.WebApp
     const themeParams = webApp.themeParams
     console.log(webApp)
+
     if (webApp.colorScheme === 'dark') {
         document.documentElement.style.setProperty('--agreement__card__title__color', '#101828')
         document.documentElement.style.setProperty('--agreement__card__description__color', '#364153')
