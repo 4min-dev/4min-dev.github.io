@@ -3,16 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 window.addEventListener('pageshow', (event) => {
-    alert('show')
     if (event.persisted) {
-        alert('cached')
         initializePage()
     }
 })
 
 function initializePage() {
-    alert('test')
-    const backButton = window.Telegram?.WebApp.BackButton
+    const backButton = window.Telegram.WebApp.BackButton
 
     function initBackButton() {
         backButton.show()
@@ -24,6 +21,7 @@ function initializePage() {
     if (window.location.pathname === "/home.html") {
         backButton.hide()
     } else {
+        backButton.hide()
         initBackButton()
     }
 
