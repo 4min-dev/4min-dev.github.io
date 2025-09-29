@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const backButton = window.Telegram?.WebApp.BackButton;
-
+    alert('test')
     function initBackButton() {
         backButton.show();
         backButton.onClick(() => {
