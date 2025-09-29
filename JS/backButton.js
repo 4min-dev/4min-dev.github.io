@@ -9,6 +9,7 @@ window.addEventListener('pageshow', (event) => {
     if (!sessionStorage.getItem('hasReloaded') || lastPath !== currentPath) {
         sessionStorage.setItem('hasReloaded', 'true')
         sessionStorage.setItem('lastPath', currentPath)
+        alert('reload')
         window.location.reload()
     }
 })

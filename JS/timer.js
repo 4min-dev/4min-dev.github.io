@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     adviceBlockHandler()
 
     timerInput.addEventListener('change', () => {
-        adviceBlockHandler()
         sessionStorage.setItem('isTimerActive', timerInput.checked)
+        adviceBlockHandler()
     })
 })
