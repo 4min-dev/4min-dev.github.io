@@ -1,18 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     initializePage()
-    alert('loaded')
-    alert(location.pathname)
-})
-
-window.addEventListener('pageshow', (event) => {
-    alert('page show')
-    alert(location.pathname)
-    if (event.persisted) {
-        alert('persisted')
-        window.location.reload()
-    } else {
-        initializePage()
-    }
 })
 
 function initializePage() {
@@ -22,6 +9,7 @@ function initializePage() {
         backButton.show()
         backButton.onClick(() => {
             history.back()
+            window.location.reload()
         })
     }
 
