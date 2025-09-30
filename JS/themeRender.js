@@ -19,4 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.style.setProperty('--primary__hint', themeParams.hint_color)
     document.documentElement.style.setProperty('--primary__input__background', themeParams.bg_color)
     document.documentElement.style.setProperty('--primary__theme__border__color', themeParams.secondary_bg_color)
+
+    const userAgent = navigator.userAgent || navigator.vendor
+
+    if (/iPad|iPhone|iPod/.test(userAgent)) {
+        document.querySelectorAll('.theme__button').forEach((button) => button.classList.add('ios'))
+    }
 })

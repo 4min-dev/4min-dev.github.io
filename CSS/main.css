@@ -296,6 +296,12 @@ button {
     border: none;
 }
 
+.theme__button.ios {
+    bottom: 36px;
+    left: 15px;
+    right: 15px;
+}
+
 #donate__page {
     padding-bottom: 80px;
 }

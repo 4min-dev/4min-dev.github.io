@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    alert('loaded')
     initializePage()
 })
 
@@ -8,14 +7,21 @@ function initializePage() {
 
     function initBackButton() {
         backButton.show()
-        backButton.onClick(() => {
-            const previousPage = document.referrer || window.history.state?.url || '/';
-            // Добавляем параметр, чтобы сбросить кеш
-            const urlWithNoCache = previousPage.includes('?')
-                ? `${previousPage}&nocache=${Date.now()}`
-                : `${previousPage}?nocache=${Date.now()}`;
-            window.location.replace(urlWithNoCache);
-        })
+
+        if (window.location.pathname === '/userAgreement.html') {
+            backButton.onClick(() => {
+                window.history.back()
+            })
+        } else {
+            backButton.onClick(() => {
+
+                const previousPage = document.referrer || window.history.state?.url || '/'
+                const urlWithNoCache = previousPage.includes('?')
+                    ? `${previousPage}&nocache=${Date.now()}`
+                    : `${previousPage}?nocache=${Date.now()}`
+                window.location.replace(urlWithNoCache)
+            })
+        }
     }
 
     if (window.location.pathname === "/home.html") {
