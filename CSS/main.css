@@ -283,9 +283,9 @@ button {
 .theme__button {
     position: fixed;
     font-weight: 600;
-    left: 8px;
-    right: 8px;
-    bottom: 8px;
+    left: .5rem;
+    right: .5rem;
+    bottom: .5rem;
     height: 3rem;
     padding: .625rem;
     background-color: var(--tg__theme__button__color);
@@ -294,12 +294,6 @@ button {
     border-radius: 0.75rem;
     outline: none;
     border: none;
-}
-
-.theme__button.ios {
-    bottom: 36px;
-    left: 15px;
-    right: 15px;
 }
 
 #donate__page {
@@ -534,10 +528,6 @@ button {
 
 .invisible {
     opacity: 0;
-}
-
-.hidden {
-    display: none !important;
 }
 
 .px__4 {
