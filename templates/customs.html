@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+    <link rel="stylesheet" href="/webapp/customs/static/css/main.css?v=2">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div class="popup__overlay flex align__center justify__center required__popup__form"
+            id="address__popup__overlay">
+            <div class="popup" id="address__popup">
+                <form class="all__data__form">
+                    <section class="column" id="passport__details__section">
+                        <span class="section__title editable">Паспортные данные</span>
+
+                        <div class="passport__details__form flex">
+                            <div class="named__input__container passport__details__form__input">
+                                <span class="element__title name__input">Фамилия</span>
+                                <input class="named__input text__only__input" maxlength="100" type="text"
+                                    placeholder="Иванов" />
+                            </div>
+
+                            <div class="named__input__container passport__details__form__input">
+                                <span class="element__title name__input">Имя</span>
+                                <input class="named__input text__only__input" maxlength="100" type="text"
+                                    placeholder="Иван" />
+                            </div>
+
+                            <div class="named__input__container passport__details__form__input">
+                                <span class="element__title name__input">Отчество</span>
+                                <input class="named__input text__only__input" maxlength="100" type="text"
+                                    placeholder="Иванович" />
+                            </div>
+
+                            <div
+                                class="required__input__container named__input__container passport__details__form__input">
+                                <span class="element__title name__input">Серия</span>
+                                <input class="named__input required__input personal__input limited__input number__input"
+                                    maxlength="4" type="number" id="passport_series" placeholder="3911" />
+                            </div>
+
+                            <div
+                                class="required__input__container named__input__container passport__details__form__input">
+                                <span class="element__title name__input">Номер</span>
+                                <input class="named__input required__input personal__input limited__input number__input"
+                                    maxlength="6" type="number" id="passport_number" placeholder="270120" />
+                            </div>
+
+                            <div class="named__input__container passport__details__form__input">
+                                <span class="element__title name__input">Дата-выдачи</span>
+                                <input class="required__input personal__input limited__input named__input date__input"
+                                    type="text" id="date__input" placeholder="ДД.ММ.ГГГГ" maxlength="10" />
+                            </div>
+
+                            <div
+                                class="required__input__container named__input__container passport__details__form__input">
+                                <span class="element__title name__input">ИНН</span>
+                                <input class="named__input required__input personal__input limited__input number__input"
+                                    maxlength="12" type="number" id="inn" placeholder="9729219090" />
+                            </div>
+
+                            <div class="named__input__container passport__details__form__input">
+                                <span class="element__title name__input">Дата-рождения</span>
+                                <input class="required__input personal__input limited__input named__input date__input"
+                                    type="text" id="birthday__input" placeholder="ДД.ММ.ГГГГ" maxlength="10" />
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="column passport__data__form" id="address__details__section"
+                        data-id="address__details__new__contact">
+                        <span class="section__title editable">Адресные данные</span>
+
+                        <div class="address__details__form flex">
+                            <div class="named__input__container address__details__form__input">
+                                <span class="element__title name__input">Полный адрес</span>
+                                <input class="named__input address__input required__input" maxlength="200"
+                                    id="address__input" type="text"
+                                    placeholder="298600, Респ. Крым, г. Ялта, ул. Московская, Д. 7А" />
+                            </div>
+
+                            <div class="named__input__container address__details__form__input">
+                                <span class="element__title name__input">Город</span>
+                                <input class="named__input text__only__input city__input" maxlength="100"
+                                    id="city__input" type="text" placeholder="Москва" />
+                            </div>
+
+                            <div class="named__input__container address__details__form__input">
+                                <span class="element__title name__input">Субъект</span>
+                                <input class="named__input text__only__input" maxlength="100" id="subject__input"
+                                    type="text" placeholder="Московская обл." />
+                            </div>
+
+                            <div class="named__input__container address__details__form__input">
+                                <span class="element__title name__input">Индекс</span>
+                                <input class="required__input named__input personal__input limited__input number__input"
+                                    id="index__input" maxlength="6" type="number" placeholder="123100" />
+                            </div>
+
+                            <div
+                                class="required__input__container named__input__container address__details__form__input">
+                                <span class="element__title name__input">Эл. почта</span>
+                                <input class="named__input required__input email__input" maxlength="100" type="email"
+                                    id="email__input" placeholder="ivan.ivanov@mail.ru" />
+                            </div>
+
+                            <div
+                                class="required__input__container named__input__container passport__details__form__input">
+                                <span class="element__title name__input">Номер телефона</span>
+                                <input class="required__input named__input personal__input limited__input number__input"
+                                    maxlength="16" type="text" id="phone__number__input" placeholder="+7(___)___-__-__">
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="save__bttn__container">
+                        <button type="button" class="red__bttn save__bttn save__client__button disabled"
+                            data-form="address__details__new__contact">
+                            Сохранить
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="popup__overlay flex align__center justify__center required__popup__form"
+            id="edit__user__popup__overlay">
+            <div class="popup" id="edit__user__popup">
+                <form class="all__data__form">
+                    <section class="column" id="passport__details__section">
+                        <span class="section__title editable">Паспортные данные</span>
+
+                        <div class="passport__details__form flex">
+                            <div class="named__input__container passport__details__form__input">
+                                <span class="element__title name__input">Фамилия</span>
+                                <input class="named__input text__only__input" maxlength="100" type="text"
+                                    placeholder="Иванов" id="surname" />
+                            </div>
+
+                            <div class="named__input__container passport__details__form__input">
+                                <span class="element__title name__input">Имя</span>
+                                <input class="named__input text__only__input" maxlength="100" type="text"
+                                    placeholder="Иван" id="name" />
+                            </div>
+
+                            <div class="named__input__container passport__details__form__input">
+                                <span class="element__title name__input">Отчество</span>
+                                <input class="named__input text__only__input" maxlength="100" type="text"
+                                    placeholder="Иванович" id="paternity" />
+                            </div>
+
+                            <div
+                                class="required__input__container named__input__container passport__details__form__input">
+                                <span class="element__title name__input">Серия</span>
+                                <input class="named__input required__input personal__input limited__input number__input"
+                                    maxlength="4" type="number" id="passport_series" placeholder="3911" />
+                            </div>
+
+                            <div
+                                class="required__input__container named__input__container passport__details__form__input">
+                                <span class="element__title name__input">Номер</span>
+                                <input class="named__input required__input personal__input limited__input number__input"
+                                    maxlength="6" type="number" id="passport_number" placeholder="270120" />
+                            </div>
+
+                            <div
+                                class="required__input__container named__input__container passport__details__form__input">
+                                <span class="element__title name__input">Дата-выдачи</span>
+                                <input class="required__input personal__input limited__input named__input date__input"
+                                    type="text" id="date__input" placeholder="ДД.ММ.ГГГГ" maxlength="10" />
+                            </div>
+
+                            <div
+                                class="required__input__container named__input__container passport__details__form__input">
+                                <span class="element__title name__input">ИНН</span>
+                                <input class="named__input required__input personal__input limited__input number__input"
+                                    maxlength="12" type="number" id="inn" placeholder="9729219090" />
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="column passport__data__form" id="address__details__section"
+                        data-id="address__details__selected__contact">
+                        <span class="section__title editable">Адресные данные</span>
+
+                        <div class="address__details__form flex">
+                            <div class="named__input__container address__details__form__input">
+                                <span class="element__title name__input">Полный адрес</span>
+                                <input class="named__input address__input" maxlength="200" id="address__input"
+                                    type="text" placeholder="298600, г. Ялта, ул. Московская " />
+                            </div>
+
+                            <div class="named__input__container address__details__form__input">
+                                <span class="element__title name__input">Город</span>
+                                <input class="named__input text__only__input city__input" maxlength="100"
+                                    id="city__input" type="text" placeholder="Москва" />
+                            </div>
+
+                            <div class="named__input__container address__details__form__input">
+                                <span class="element__title name__input">Субъект</span>
+                                <input class="named__input text__only__input" maxlength="100" id="subject__input"
+                                    type="text" placeholder="Московская обл." />
+                            </div>
+
+                            <div
+                                class="required__input__container named__input__container passport__details__form__input">
+                                <span class="element__title name__input">Индекс</span>
+                                <input class="required__input named__input personal__input limited__input number__input"
+                                    maxlength="6" type="number" id="index__input" placeholder="228228" />
+                            </div>
+
+                            <div
+                                class="required__input__container named__input__container passport__details__form__input">
+                                <span class="element__title name__input">Эл. почта</span>
+                                <input class="named__input required__input email__input" maxlength="100" type="email"
+                                    id="email__input" placeholder="ivan.ivanov@mail.ru" />
+                            </div>
+
+                            <div
+                                class="required__input__container named__input__container passport__details__form__input">
+                                <span class="element__title name__input">Номер телефона</span>
+                                <input class="required__input named__input personal__input limited__input number__input"
+                                    maxlength="16" type="text" id="phone__number__input" placeholder="+7(___)___-__-__">
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="save__bttn__container">
+                        <button type="button" class="red__bttn save__bttn save__changed__user__bttn"
+                            data-form="address__details__selected__contact">Сохранить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="popup__overlay delete__verify__overlay">
+            <div class="popup delete__verify__popup">
+                <div class="popup__text__container">
+                    <span class="popup__title">Подтвердите удаление</span>
+                    <span class="popup__description">
+                        Вы уверены что хотите удалить пользователя <span class="red__text delete__user__value">Давид
+                            Шоумэн</span>?
+                    </span>
+                </div>
+
+                <div class="popup__buttons__container">
+                    <button type="submit" class="red__bttn verify__button">
+                        Подтвердить
+                    </button>
+
+                    <button type="button" class="gray__bttn cancel__verify__button">
+                        Отменить
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <section id="select__input__value__section">
+            <form class="select__contact__form">
+                <div class="named__input__container select__input__container">
+                    <span class="element__title name__input">Контакт</span>
+                    <div class="named__input__content flex align__center">
+                        <span class="selected__input__container flex align__center named__input">
+                            <span class="selected__input__value">
+                                Не выбран
+                            </span>
+
+                            <button type="button"
+                                class="select__input__value__button flex column align__center justify__center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path d="M17 14L12 9" stroke="#9299A2" stroke-width="1.8" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M12 9L7 14" stroke="#9299A2" stroke-width="1.8" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </span>
+
+                        <button type="button"
+                            class="add__button get__address__popup__button flex column align__center justify__center">
+                            <div class="svg__container flex column align__center justify__center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
+                                    fill="none">
+                                    <path d="M1.92889 9H16.071M8.99996 16.0711V1.92893" stroke="#ED0028"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="select__input__menu flex column">
+                        <div class="select__input__menu__card" data-value="4526001234567890" data-surname="Иванов"
+                            data-name="Александр" data-paternity="Сергеевич" data-pass-series="4506"
+                            data-pass-number="123456" data-issue-date="15.08.1990" data-inn="770501662736"
+                            data-address="Инд. 123456, субъект. Московская обл., г. Москва, ул. Ленина, д. 15"
+                            data-city="Москва" data-index="123456" data-subject="Московская обл."
+                            data-email="ivanov.alex@gmail.com" data-phone="+79161234567">Имя Клиента 1
+                            <div class="select__input__menu__card__buttons">
+                                <button type="button" class="edit__button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path
+                                            d="M3.33329 10.6667L2.66663 13.3333L5.33329 12.6667L13.0572 4.94281C13.5778 4.42211 13.5779 3.57789 13.0572 3.05719L12.9428 2.94281C12.4221 2.42211 11.5779 2.42211 11.0572 2.94281L3.33329 10.6667Z"
+                                            stroke="#222222" stroke-width="1.8" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M10 4L12 6" stroke="#222222" stroke-width="1.8" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M8.66663 13.3334H14" stroke="#222222" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                                <button type="button" class="delete__button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                        fill="none">
+                                        <path d="M15 15L10 10M10 10L5 5M10 10L15 5M10 10L5 15" stroke="#FF0000"
+                                            stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="select__input__menu__card" data-value="4627009876543210" data-surname="Петрова"
+                            data-name="Мария" data-paternity="Алексеевна" data-pass-series="4627"
+                            data-pass-number="987654" data-issue-date="12.03.1985" data-inn="502402345678"
+                            data-address="Инд. 143400, субъект. Московская обл., г. Красногорск, ул. Тихая, д. 7"
+                            data-city="Красногорск" data-index="143400" data-subject="Московская обл."
+                            data-email="petrova.maria@yandex.ru" data-phone="+79261234567">Имя Клиента 2
+                            <div class="select__input__menu__card__buttons">
+                                <button type="button" class="edit__button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path
+                                            d="M3.33329 10.6667L2.66663 13.3333L5.33329 12.6667L13.0572 4.94281C13.5778 4.42211 13.5779 3.57789 13.0572 3.05719L12.9428 2.94281C12.4221 2.42211 11.5779 2.42211 11.0572 2.94281L3.33329 10.6667Z"
+                                            stroke="#222222" stroke-width="1.8" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M10 4L12 6" stroke="#222222" stroke-width="1.8" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M8.66663 13.3334H14" stroke="#222222" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                                <button type="button" class="delete__button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                        fill="none">
+                                        <path d="M15 15L10 10M10 10L5 5M10 10L15 5M10 10L5 15" stroke="#FF0000"
+                                            stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="select__input__menu__card" data-value="4715006543217890" data-surname="Сидоров"
+                            data-name="Иван" data-paternity="Иванович" data-pass-series="4715" data-pass-number="654321"
+                            data-issue-date="10.06.1992" data-inn="503409876543"
+                            data-address="Инд. 620000, субъект. Свердловская обл., г. Екатеринбург, ул. Малиновая, д. 5"
+                            data-city="Екатеринбург" data-index="620000" data-subject="Свердловская обл."
+                            data-email="sidorov.ivan@mail.ru" data-phone="+79371234567">Имя Клиента 3
+                            <div class="select__input__menu__card__buttons">
+                                <button type="button" class="edit__button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path
+                                            d="M3.33329 10.6667L2.66663 13.3333L5.33329 12.6667L13.0572 4.94281C13.5778 4.42211 13.5779 3.57789 13.0572 3.05719L12.9428 2.94281C12.4221 2.42211 11.5779 2.42211 11.0572 2.94281L3.33329 10.6667Z"
+                                            stroke="#222222" stroke-width="1.8" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M10 4L12 6" stroke="#222222" stroke-width="1.8" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M8.66663 13.3334H14" stroke="#222222" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                                <button type="button" class="delete__button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                        fill="none">
+                                        <path d="M15 15L10 10M10 10L5 5M10 10L15 5M10 10L5 15" stroke="#FF0000"
+                                            stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="select__input__menu__card" data-value="5012001230987654" data-surname="Кузнецов"
+                            data-name="Дмитрий" data-paternity="Анатольевич" data-pass-series="5012"
+                            data-pass-number="123098" data-issue-date="05.11.1988" data-inn="540507234567"
+                            data-address="Инд. 630000, субъект. Новосибирская обл., г. Новосибирск, ул. Гагарина, д. 10"
+                            data-city="Новосибирск" data-index="630000" data-subject="Новосибирская обл."
+                            data-email="kuznetsov.dmitry@inbox.ru" data-phone="+79451234567">Имя Клиента 4
+                            <div class="select__input__menu__card__buttons">
+                                <button type="button" class="edit__button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path
+                                            d="M3.33329 10.6667L2.66663 13.3333L5.33329 12.6667L13.0572 4.94281C13.5778 4.42211 13.5779 3.57789 13.0572 3.05719L12.9428 2.94281C12.4221 2.42211 11.5779 2.42211 11.0572 2.94281L3.33329 10.6667Z"
+                                            stroke="#222222" stroke-width="1.8" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M10 4L12 6" stroke="#222222" stroke-width="1.8" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M8.66663 13.3334H14" stroke="#222222" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                                <button type="button" class="delete__button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                        fill="none">
+                                        <path d="M15 15L10 10M10 10L5 5M10 10L15 5M10 10L5 15" stroke="#FF0000"
+                                            stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="select__input__menu__card" data-value="5208008765432109" data-surname="Смирнова"
+                            data-name="Ольга" data-paternity="Владимировна" data-pass-series="5208"
+                            data-pass-number="876543" data-issue-date="25.07.1995" data-inn="520805678912"
+                            data-address="Инд. 420100, субъект. Республика Татарстан, г. Казань, ул. Баумана, д. 25"
+                            data-city="Казань" data-index="420100" data-subject="Республика Татарстан"
+                            data-email="smirnova.olga@gmail.com" data-phone="+79561234567">Имя Клиента 5
+                            <div class="select__input__menu__card__buttons">
+                                <button type="button" class="edit__button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path
+                                            d="M3.33329 10.6667L2.66663 13.3333L5.33329 12.6667L13.0572 4.94281C13.5778 4.42211 13.5779 3.57789 13.0572 3.05719L12.9428 2.94281C12.4221 2.42211 11.5779 2.42211 11.0572 2.94281L3.33329 10.6667Z"
+                                            stroke="#222222" stroke-width="1.8" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M10 4L12 6" stroke="#222222" stroke-width="1.8" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M8.66663 13.3334H14" stroke="#222222" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                                <button type="button" class="delete__button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                        fill="none">
+                                        <path d="M15 15L10 10M10 10L5 5M10 10L15 5M10 10L5 15" stroke="#FF0000"
+                                            stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </form>
+        </section>
+
+        <section id="passport__data__section">
+
+            <form class="passport__data__form flex column">
+                <div>
+                    <span class="section__title">Паспортные данные</span>
+
+                    <div class="passport__details__form flex">
+                        <div class="named__input__container passport__details__form__input">
+                            <span class="element__title name__input">Фамилия</span>
+                            <input readonly id="surname__input" class="named__input text__only__input" maxlength="100"
+                                type="text" placeholder="Иванов" />
+                        </div>
+
+                        <div class="named__input__container passport__details__form__input">
+                            <span class="element__title name__input">Имя</span>
+                            <input readonly id="name__input" class="named__input text__only__input" maxlength="100"
+                                type="text" placeholder="Иван" />
+                        </div>
+
+                        <div class="named__input__container passport__details__form__input">
+                            <span class="element__title name__input">Отчество</span>
+                            <input readonly id="paternity__input" class="named__input text__only__input" maxlength="100"
+                                type="text" placeholder="Иванович" />
+                        </div>
+
+                        <div class="required__input__container named__input__container passport__details__form__input">
+                            <span class="personal__input__error input__error__message"></span>
+                            <span class="element__title name__input">Серия</span>
+                            <input readonly id="series__input" class="limited__input number__input named__input"
+                                maxlength="4" type="number" id="passport_series" placeholder="3911" />
+                        </div>
+
+                        <div class="required__input__container named__input__container passport__details__form__input">
+                            <span class="personal__input__error input__error__message"></span>
+                            <span class="element__title name__input">Номер</span>
+                            <input readonly id="number__input"
+                                class="personal__input limited__input number__input named__input" maxlength="6"
+                                type="number" id="passport_number" placeholder="270120" />
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="section__title">Персональные данные</span>
+
+                    <div class="passport__details__form">
+                        <div class="named__input__container address__details__form__input">
+                            <span class="element__title name__input">Дата рождения</span>
+                            <input readonly id="address__input" class="named__input" maxlength="200" id="address__input"
+                                type="text" placeholder="01.12.2000" />
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="section__title">Адресные данные</span>
+
+                    <div class="passport__details__form">
+                        <div class="named__input__container address__details__form__input">
+                            <span class="element__title name__input">Полный адрес</span>
+                            <input readonly id="address__input" class="named__input address__input" maxlength="200"
+                                id="address__input" type="text" placeholder="298600, г. Ялта, ул. Московская" />
+                        </div>
+                    </div>
+
+                    <div class="save__bttn__container">
+                        <button type="submit" class="red__bttn next__button" onclick="Save('{{cost_per_good}}',
+'{{count}}',
+'{{img_path}}',
+'{{product_url}}',
+'{{img_url}}',
+'{{description}}',
+'{{tracking_number}}', event)">
+                            Далее
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="/webapp/customs/static/js/userData.js?v=6"></script>
+    <script src="/webapp/customs/static/js/maxLengthFix.js"></script>
+    <script src="/webapp/customs/static/js/checkIsEmptyInput.js"></script>
+    <script src="/webapp/customs/static/js/selectInput.js"></script>
+    <script src="/webapp/customs/static/js/addressInputMask.js?v=1"></script>
+    <script src="/webapp/customs/static/js/dateInputMask.js"></script>
+    <script src="/webapp/customs/static/js/textOnlyInput.js"></script>
+    <script src="/webapp/customs/static/js/emailValidator.js"></script>
+    <script src="/webapp/customs/static/js/personalDataValidator.js?v=2"></script>
+    <script src="/webapp/customs/static/js/saveDataFormValidator.js"></script>
+    <script src="/webapp/customs/static/js/fixNumberInput.js"></script>
+    <script src="/webapp/customs/static/js/addressPopup.js"></script>
+    <script src="/webapp/customs/static/js/userScalableFix.js"></script>
+    <script src="/webapp/customs/static/js/phoneMask.js"></script>
+</body>
+
+</html>

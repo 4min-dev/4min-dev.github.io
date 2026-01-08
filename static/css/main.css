@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:wght@700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body,
+* {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+
+body {
+    background-color: #ffffff;
+    overflow: auto;
+}
+
+@font-face {
+    font-family: 'SF-Pro';
+    src: local('SF-Pro-Text-Bold'), url(/customs/static/fonts/SF-Pro-Text-Bold.otf) format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'SF-Pro';
+    src: local('SF-Pro-Text-Semibold'), url(/customs/static/fonts/SF-Pro-Text-Semibold.otf) format('truetype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'SF-Pro';
+    src: local('SF-Pro-Text-Regular'), url(/customs/static/fonts/SF-Pro-Text-Regular.otf) format('truetype');
+    font-weight: 500;
+}
+
+body,
+* {
+    font-family: 'SF-Pro', sans-serif !important;
+}
+
+main {
+    margin-top: 27px;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+section:not(:nth-child(1)) {
+    margin-top: 17px;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.align__center {
+    align-items: center;
+}
+
+.justify__center {
+    justify-content: center;
+}
+
+.section__title {
+    color: #222222;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.6px;
+    letter-spacing: -0.03em;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.black__text {
+    color: #222222
+}
+
+.gray__text {
+    color: #9299A2
+}
+
+.element__title {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 13.2px;
+    color: #9299A2;
+}
+
+.element__title.errorMessage {
+    color: red
+}
+
+.element__title.successMessage {
+    color: green
+}
+
+.red__bttn {
+    background: #ED0028;
+    color: #FFFFFF;
+    outline: none;
+    border: none;
+}
+
+.named__input__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#started__section .named__input__container:not(:nth-child(1)) {
+    margin-top: 44px;
+}
+
+.named__input__container .element__title {
+    margin-bottom: 6px;
+    transition: color .7s;
+}
+
+.named__input__container .named__input {
+    position: relative;
+    padding: 14px;
+    border-radius: 14px;
+    background: rgba(245, 245, 245, 1);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    height: calc(48px - 30px);
+    color: #222222;
+    border: 1px solid;
+    border-color: transparent;
+    transition: all .7s;
+    outline: none;
+
+}
+
+#started__section .named__input__container .named__input,
+#select__input__value__section .named__input__container .named__input,
+#passport__data__section .input__with__cancel__container:nth-child(1) .named__input {
+    width: 100%;
+}
+
+.named__input__container .named__input.successInputValue {
+    border-color: green;
+}
+
+.named__input__container .named__input.invalidInputValue {
+    border-color: red;
+}
+
+.named__input__container .named__input__content {
+    position: relative;
+    height: 48px;
+}
+
+.named__input__container .named__input__content .cancel__button {
+    position: absolute;
+    left: 256px;
+    outline: none;
+    border: none;
+    background: none;
+    opacity: 0;
+    transition: opacity .4s;
+}
+
+.named__input__container .named__input__content .cancel__button.visible {
+    opacity: 1;
+}
+
+.named__input__container .named__input__content .add__button {
+    height: 100%;
+    margin-left: 7px;
+    outline: none;
+    border: none;
+    width: 48px;
+    padding: 8px 24px 8px 24px;
+    border-radius: 14px;
+    background: #ED0028;
+}
+
+.named__input__container .named__input__content .add__button .svg__container {
+    width: 24px;
+    height: 24px;
+    border-radius: 23px;
+    background: #FFFFFF;
+}
+
+.named__input__container .named__input__content .select__input__value__button {
+    position: absolute;
+    left: calc(100% - 35px);
+    border: none;
+    outline: none;
+    background: none;
+    rotate: 180deg;
+    transition: all .4s;
+}
+
+.named__input__container .named__input__content .select__input__value__button.active {
+    transform: scaleY(-100%);
+}
+
+.select__input__menu {
+    padding: 0px 24px;
+    gap: 16px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 0px 17.2px 0px #0C011E1A;
+    transition: all .5s;
+    width: calc(100% - 48px * 2 - 7px);
+    display: flex;
+    height: 0px;
+}
+
+.select__input__menu.visible {
+    margin-top: 17px;
+    padding: 24px;
+    opacity: 1;
+}
+
+.select__input__menu .select__input__menu__card {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    transition: color .4s;
+    color: #222222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select__input__menu .select__input__menu__card.active {
+    color: rgba(200, 200, 200, 100%)
+}
+
+.select__input__menu .select__input__menu__card .select__input__menu__card__buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.select__input__menu .select__input__menu__card .select__input__menu__card__buttons button {
+    outline: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    background: rgba(245, 245, 245, 1);
+}
+
+.select__input__menu .select__input__menu__card .select__input__menu__card__buttons button:nth-child(1) svg {
+    opacity: 50%;
+}
+
+#passport__data__section .passport__data__form {
+    position: relative;
+    padding: 24px;
+    border-radius: 32px;
+    height: fit-content;
+    box-shadow: 0px 0px 17.2px 0px #0C011E1A;
+    gap: 40px 0px;
+}
+
+#passport__data__section .passport__data__form .passport__details__form {
+    margin-top: 20px;
+    gap: 12px 8px;
+    flex-wrap: wrap;
+}
+
+.passport__details__form__input:not(:nth-child(3)),
+.passport__details__form__input:not(:nth-child(8)) {
+    width: calc(50% - 4px);
+}
+
+.passport__details__form__input:nth-child(3),
+.passport__details__form__input:nth-child(8) {
+    width: 100%;
+}
+
+.passport__data__form .next__button {
+    width: 100%;
+    padding: 8px 24px 8px 24px;
+    height: 46px;
+    margin-top: 24px;
+    border-radius: 1000px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19.6px;
+}
+
+.popup__overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -222;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.6);
+    transition: all .7s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup__overlay.closing {
+    opacity: 0;
+    z-index: 999;
+}
+
+.popup__overlay.visible {
+    opacity: 1;
+    z-index: 999;
+}
+
+.popup__overlay .popup {
+    position: relative;
+    padding: 24px;
+    gap: 24px;
+    margin-right: 24px;
+    margin-left: 24px;
+    border-radius: 32px;
+    background: white;
+    overflow: auto;
+    max-height: 70vh;
+    box-shadow: 0px 0px 17.2px 0px rgba(12, 1, 30, 0.1);
+}
+
+.popup__overlay .popup form .passport__details__form,
+.popup__overlay .popup form .address__details__form {
+    flex-wrap: wrap;
+}
+
+.popup__overlay .popup form .named__input__container .named__input {
+    width: auto;
+}
+
+.popup__overlay .popup form .passport__details__form {
+    gap: 12px 8px;
+}
+
+.popup form section:not(:nth-child(1)) {
+    margin-top: 40px;
+}
+
+.popup form section {
+    display: flex;
+    gap: 20px 0px;
+}
+
+.popup form section:not(:nth-child(1)) .address__details__form .named__input__container:nth-child(2),
+.popup form section:not(:nth-child(1)) .address__details__form .named__input__container:nth-child(3) {
+    width: calc(50% - 4px);
+}
+
+.popup form section:not(:nth-child(1)) .address__details__form .named__input__container {
+    width: 100%;
+}
+
+.popup form section:not(:nth-child(1)) .address__details__form {
+    margin-bottom: 24px;
+    gap: 20px 8px;
+}
+
+.popup form .save__bttn {
+    width: 100%;
+    height: 46px;
+    padding: 8px 24px 8px 24px;
+    border-radius: 1000px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19.6px;
+    transition: all .7s;
+}
+
+
+@keyframes savedButtonAnimation {
+    to {
+        background: rgba(237, 0, 40, 20%);
+        color: #FFFFFF
+    }
+}
+
+
+.save__bttn.error {
+    background: rgba(237, 0, 40, 0.2);
+    color: #ED0028;
+    pointer-events: none;
+}
+
+.save__bttn.saved {
+    animation: savedButtonAnimation .7s forwards
+}
+
+.save__bttn.success {
+    background: rgba(49, 215, 37, 1);
+    color: white;
+}
+
+.save__bttn.disabled {
+    opacity: 60%;
+    pointer-events: none;
+}
+
+.next__button.disabled {
+    opacity: 60%;
+    pointer-events: none;
+}
+
+.delete__verify__popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px;
+    gap: 24px;
+    border-radius: 24px;
+}
+
+.delete__verify__popup .popup__text__container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.delete__verify__popup .popup__text__container .popup__title {
+    font-family: "Inter", serif !important;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 22.8px;
+    letter-spacing: -0.03em;
+    color: #222222;
+}
+
+.delete__verify__popup .popup__text__container .popup__description {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    letter-spacing: -0.01em;
+    color: rgba(34, 34, 34, 0.5);
+}
+
+.delete__verify__popup .popup__text__container .popup__description .red__text {
+    font-weight: 500;
+    color: #ED0028;
+}
+
+.delete__verify__popup .popup__buttons__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+    height: 46px;
+}
+
+.delete__verify__popup .popup__buttons__container button {
+    padding: 8px 24px 8px 24px;
+    border-radius: 1000px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    letter-spacing: -0.03em;
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.delete__verify__popup .popup__buttons__container button.verify__button {
+    color: #FFFFFF;
+    background: #ED0028;
+}
+
+
+.delete__verify__popup .popup__buttons__container button.cancel__verify__button {
+    background: #F5F5F5;
+    color: #222222;
+}
+
+.selected__input__value {
+    margin-right: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 55vw;
+}
